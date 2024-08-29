@@ -1,16 +1,21 @@
 package aaa_examples.design_patterns.decorator;
 
+/*
+ * Each car accessory class extends this class.
+ * Instance of this class is container for next car accessory.
+ * 
+ * */
 public abstract class CarDecorator implements Car_I {
-	public static String param;
-	private Car_I additionalElement;
 	
-	public CarDecorator(Car_I additionalElement) {
-		this.additionalElement = additionalElement;
+	private Car_I carAccessory;
+	
+	public CarDecorator(Car_I carAccessory) {
+		this.carAccessory = carAccessory;
 	}
 	
 	@Override
 	public String addCarAccessory() {
-		return additionalElement.addCarAccessory();
+		return carAccessory.addCarAccessory();
 	}
 
 }
